@@ -1,16 +1,7 @@
-"""
-
-    Utils functions for LSTM network.
-
-"""
-
-from keras.models import Sequential, load_model
-from keras.layers import Dense, Activation, Dropout
-from keras.layers import LSTM
-from keras.optimizers import RMSprop
+from keras.models import Sequential
+from keras.layers import Dense, Activation, LSTM
 import io
 import numpy as np
-
 
 def create_sequences(text, sequence_length, step):
     sequences = []
@@ -27,9 +18,7 @@ def build_model(sequence_length, chars):
     model.add(Dense(64))
     model.add(Dense(len(chars)))
     model.add(Activation('softmax'))
-
-    optimizer = RMSprop(lr=0.001)
-    model.compile(loss='categorical_crossentropy', optimizer=optimizer)
+    model.compile(loss='categorical_crossentropy', optimizer='RMSprop')
     return model
 
 
