@@ -2,3 +2,5 @@
 ._.DS_Store
 .vscode
 .env
+*.pyc
+model_weights_*

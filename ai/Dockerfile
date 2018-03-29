@@ -28,7 +28,7 @@ RUN pip --no-cache-dir install --upgrade /tmp/tensorflow_pkg/tensorflow-*.whl &&
     rm -rf /root/.cache
 
 # Install some libraries.
-RUN pip install keras h5py Pillow
+RUN pip install keras h5py Pillow sklearn
 
 WORKDIR /data
 
