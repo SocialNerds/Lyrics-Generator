@@ -1,4 +1,4 @@
-# TensorFlow starting point
+# Lyrics Generator with Keras
 
 This repo contains a samle Lyrics generator.
 
