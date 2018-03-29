@@ -18,9 +18,9 @@ Login to the container,
 docker exec -it ai /bin/bash -c "TERM=$TERM exec bash"
 ~~~~
 
-Go to /data folder and run
+Run
 ~~~~
-python tf.py
+python main.py
 ~~~~
 
 # Some things to consider
