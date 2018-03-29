@@ -1,6 +1,8 @@
 # Lyrics Generator with Keras
 
-This repo contains a samle Lyrics generator.
+This repo contains a samle Lyrics generator. This is the source code for this tutorial (GR)
+
+[![IMAGE ALT TEXT HERE](https://img.youtube.com/vi/AvCwJ9c-JgI/0.jpg)](https://www.youtube.com/watch?v=AvCwJ9c-JgI)
 
 # Installation
 Requirements
