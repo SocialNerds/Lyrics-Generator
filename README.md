@@ -1,6 +1,6 @@
 # Lyrics Generator with Keras
 
-This repo contains a samle Lyrics generator. This is the source code for this tutorial (GR)
+This repo contains a simle Lyrics generator. We create an LSTM model with Keras and train it with some existing lyrics to produce a new song. It is the source code for this tutorial (GR)
 
 [![IMAGE ALT TEXT HERE](https://img.youtube.com/vi/AvCwJ9c-JgI/0.jpg)](https://www.youtube.com/watch?v=AvCwJ9c-JgI)
 
