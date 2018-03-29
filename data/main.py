@@ -13,7 +13,7 @@ SEQUENCE_STEP = 1
 # The file that contains the text.
 CORPUS = "corpus.txt"
 # How many epochs to train for.
-EPOCHS = 3
+EPOCHS = 8
 
 # Get the text from corpus.
 text = helpers.get_text(CORPUS)
@@ -53,32 +53,20 @@ model.save_weights("model_weights.h5")
 # Create a first 80 chars seed.
 seed = u"Του Κίτσου η μάνα με τα τέσσερα πουλάκια\nκαι με τα τρια τουφέκια στο βράχο απάνω".lower()
 
-# diversities = [0.2, 0.5, 1.0, 1.2]
-diversities = [0.2]
-for diversity in diversities:
-    print('----- diversity:', diversity)
+for i in range(400):
+    x = np.zeros((1, SEQUENCE_LENGTH, len(chars)))
+    for t, char in enumerate(seed):
+        x[0, t, char_to_index[char]] = 1.
 
-    generated = ''
-    generated += seed
-    sys.stdout.write(generated)
+    predictions = model.predict(x, verbose=0)[0]
 
-    for i in range(400):
-        x = np.zeros((1, SEQUENCE_LENGTH, len(chars)))
-        for t, char in enumerate(seed):
-            x[0, t, char_to_index[char]] = 1.
+    index = np.argmax(predictions)
+    # print(index)
 
-        predictions = model.predict(x, verbose=0)[0]
-    
-        # max_value = max(predictions)
-        # max_index = predictions.index(max_value)
-        print(np.argmax(predictions))
+    next_char = indices_char[index]
+    # print(next_char)
 
-        next_index = helpers.sample(predictions, diversity)
-        next_char = indices_char[next_index]
+    seed = seed[1:] + next_char
 
-        generated += next_char
-        seed = seed[1:] + next_char
-
-        sys.stdout.write(next_char)
-        sys.stdout.flush()
-    print()
+    sys.stdout.write(next_char)
+    sys.stdout.flush()

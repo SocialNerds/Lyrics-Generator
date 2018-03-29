@@ -35,4 +35,4 @@ WORKDIR /data
 EXPOSE 8888 6006
 
 # Just to keep it running.
-CMD tail -f /dev/null
+CMD export PYTHONIOENCODING=UTF-8 && tail -f /dev/null
