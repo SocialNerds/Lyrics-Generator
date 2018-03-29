@@ -31,7 +31,7 @@ This is used as a starting point for machine learning projects. For this reason,
 Keras and some other libraries come pre-installed. You may remove them at your
 own discretion.
 
-The model is trained with a handful of lyrics to avoid copyright infringement stuff. You may improve the accuracy by adding more lyrics files.
+The model is trained with a handful of lyrics to avoid copyright infringement stuff. You may improve the accuracy by adding more lyrics.
 
 # Maintainer
 [Thanos Nokas](https://www.linkedin.com/in/thanosnokas)
