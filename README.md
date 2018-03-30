@@ -6,7 +6,7 @@ This repo contains a simle Lyrics generator. We create an LSTM model with Keras 
 
 # Installation
 Requirements
-- You need to have [Docker](https://docs.docker.com/engine/installation/) installed
+- You need to have [Docker](https://docs.docker.com/engine/installation/) and [Docker Compose](https://docs.docker.com/compose/install/) installed
 
 # Run
 
