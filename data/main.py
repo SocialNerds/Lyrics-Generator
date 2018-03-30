@@ -11,7 +11,7 @@ SEQUENCE_STEP = 1
 # The file that contains the text.
 CORPUS = "corpus.txt"
 # How many epochs to train for.
-EPOCHS = 8
+EPOCHS = 10
 
 # Get the text from corpus.
 text = helpers.get_text(CORPUS)
@@ -32,14 +32,14 @@ x, y = helpers.convert_to_one_hot(values, SEQUENCE_LENGTH, chars_length, char_to
 model = helpers.create_model(SEQUENCE_LENGTH, chars_length)
 
 # Train the model and save it to the disk.
-model.fit(x, y, batch_size=512, epochs=EPOCHS)
-model.save_weights("model_weights.h5")
+# model.fit(x, y, batch_size=512, epochs=EPOCHS)
+# model.save_weights("model_weights.h5")
 # Uncomment the next line to use existing model weights. But you need to comment the two lines above.
 # You need to have already run it at least once to save the first model weights.
-# model.load_weights("model_weights.h5")
+model.load_weights("model_weights.h5")
 
 # Create a first 80 chars seed.
-seed = u"Σύρε να ειπής της μάννας σου να μη σε καταρειέται\nνα δέσης το κεφάλι σου με δεκο".lower()
+seed = u"Σύρε να ειπής της μάννας σου να μη σε καταρειέται\nνα πέσεις στο βουνό και να σου".lower()
 sys.stdout.write(unicode(seed).encode('utf8'))
 for i in range(400):
     x = np.zeros((1, SEQUENCE_LENGTH, chars_length))
@@ -55,3 +55,4 @@ for i in range(400):
 
     sys.stdout.write(unicode(next_char).encode('utf8'))
     sys.stdout.flush()
+print('')
